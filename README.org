@@ -2,14 +2,17 @@
 #+Date: 2017-05-17
 Time-stamp: <2017-05-17>
 
-* benchmark encode/decode performance of popular serialization libraries
-
-json, protocol buffer and msgpack
+* benchmark performance of popular serialization libraries
+- json
+- protocol buffer
+- msgpack
 
 To run the benchmarks,
 
-    make test
-    make run
+#+BEGIN_SRC sh
+make test
+make run
+#+END_SRC
 
 * results
 
@@ -36,7 +39,7 @@ To run the benchmarks,
 | umsgpack     |   0.22 |   0.40 |
 | msgpack-pypy |   0.42 |   0.30 |
 
-Note: msgpack-pypy is in beta state. All other lib is in stable state.
+Note: msgpack-pypy is in beta state. Other libraries are in stable state.
 
 ** summary
 For py2/py3, pb > json >> msgpack.
