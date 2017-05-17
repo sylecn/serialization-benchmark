@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package bench;
+
+message Object {
+	string id = 1;
+	string key1 = 2;
+	string key2 = 3;
+	string key3 = 4;
+	string key4 = 5;
+	string key5 = 6;
+	int32 key6 = 7;
+	string key7 = 8;
+	string key8 = 9;
+	string key9 = 10;
+}

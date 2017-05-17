@@ -1,0 +1,7 @@
+* COMMENT -*- mode: org -*-
+#+Date: 2017-05-17
+Time-stamp: <2017-05-17>
+
+* benchmark encode/decode performance of popular serialization libraries
+
+json, protocol buffer and msgpack
