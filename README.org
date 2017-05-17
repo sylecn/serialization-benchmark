@@ -6,6 +6,11 @@ Time-stamp: <2017-05-17>
 
 json, protocol buffer and msgpack
 
+To run the benchmarks,
+
+    make test
+    make run
+
 * results
 
 ** python2 (Python 2.7.9)
