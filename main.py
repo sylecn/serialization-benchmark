@@ -17,6 +17,7 @@ import json
 from wells.debug import trace_time
 import msgpack
 import umsgpack
+import msgpack_pypy
 
 import obj_pb2
 
@@ -119,6 +120,20 @@ def bench_umsgpack_decode(strs):
         umsgpack.unpackb(s)
 
 
+@trace_time()
+def bench_msgpack_pypy_encode(objs):
+    result = []
+    for obj in objs:
+        result.append(msgpack_pypy.dumps(obj))
+    return result
+
+
+@trace_time()
+def bench_msgpack_pypy_decode(strs):
+    for s in strs:
+        msgpack_pypy.loads(s)
+
+
 def main():
     N = 50000
     objs = gen_objs(N)
@@ -140,6 +155,10 @@ def main():
     logger.info("running msgpack (u-msgpack-python) benchmark")
     r = bench_umsgpack_encode(objs)
     bench_umsgpack_decode(r)
+
+    logger.info("running msgpack (msgpack-pypy) benchmark")
+    r = bench_msgpack_pypy_encode(objs)
+    bench_msgpack_pypy_decode(r)
 
 
 if __name__ == '__main__':

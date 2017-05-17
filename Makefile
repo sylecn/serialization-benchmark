@@ -1,6 +1,6 @@
 PYTHON_MODULES := main.py test_main.py
 
-DEFAULT_PYTHON := python2
+DEFAULT_PYTHON := python3
 VIRTUALENV := virtualenv -q --python=$(DEFAULT_PYTHON) --no-download
 
 VENV := .venv

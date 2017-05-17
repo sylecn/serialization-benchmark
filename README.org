@@ -5,3 +5,38 @@ Time-stamp: <2017-05-17>
 * benchmark encode/decode performance of popular serialization libraries
 
 json, protocol buffer and msgpack
+
+* results
+
+** python2 (Python 2.7.9)
+|         | encode | decode |
+|---------+--------+--------|
+| json    |   0.46 |   0.59 |
+| pb      |   0.16 |   0.20 |
+| msgpack |   3.73 |   4.23 |
+
+** python3 (Python 3.4.2)
+|         | encode | decode |
+|---------+--------+--------|
+| json    |   0.45 |   0.35 |
+| pb      |   0.16 |   0.20 |
+| msgpack |   2.92 |   3.00 |
+
+** pypy (PyPy 2.4.0 with GCC 4.9.2, Python 2.7.8)
+|              | encode | decode |
+|--------------+--------+--------|
+| json         |   0.37 |   0.11 |
+| pb           |   0.70 |   0.31 |
+| msgpack      |   0.32 |   0.71 |
+| umsgpack     |   0.22 |   0.40 |
+| msgpack-pypy |   0.42 |   0.30 |
+
+Note: msgpack-pypy is in beta state. All other lib is in stable state.
+
+** summary
+For py2/py3, pb > json >> msgpack.
+For pypy, json > pb = msgpack.
+
+Json is a good choice. It doesn't have a big performance penalty.
+
+TODO Why msgpack has so bad performance under cpython?

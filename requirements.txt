@@ -1,4 +1,5 @@
-wells
+wells==1.1.0
 protobuf==3.2.0
-u-msgpack-python
-msgpack-python
+u-msgpack-python==2.4.1
+msgpack-python==0.4.8
+msgpack-pypy==0.0.2
